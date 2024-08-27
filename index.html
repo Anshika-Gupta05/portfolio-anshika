@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anshika - Personal Portfolio</title>
+
+    <!--
+    - favicon
+  -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/logo.ico"
+      type="image/x-icon"
+    />
+
+    <!--
+    - custom css link
+  -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!--
+    - google font link
+  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!--
+    - #MAIN
+  -->
+
+    <main>
+      <!--
+      - #SIDEBAR
+    -->
+
+      <aside class="sidebar" data-sidebar>
+        <div class="sidebar-info">
+          <figure class="avatar-box">
+            <img src="./assets/images/profile.png" alt="Anshika Gupta" width="80">
+          </figure>
+
+          <div class="info-content">
+            <h1 class="name" title="Anshika Gupta">Anshika Gupta</h1>
+
+          </div>
+
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+        </div>
+
+        <div class="sidebar-info_more">
+          <div class="separator"></div>
+
+          <ul class="contacts-list">
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+
+                <a href="mailto:guptaanshika974@gmail.com" class="contact-link"
+                  >guptaanshika974@gmail.com</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+
+                <a href="tel:+917983708076" class="contact-link"
+                  >+91 7983708076</a
+                >
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+
+                <time datetime="1982-06-23">January 05, 2003</time>
+              </div>
+            </li>
+
+            <li class="contact-item">
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+
+                <address>Dehradun, Uttarakhand, India</address>
+              </div>
+            </li>
+          </ul>
+
+          <div class="separator"></div>
+
+          <ul class="social-list">
+            <li class="social-item">
+              <a
+                href="https://leetcode.com/u/Anshika05_2003/"
+                class="social-link"
+              >
+                <img
+                  src="assets/images/lt-logo-removebg-preview.png"
+                  width="24"
+                  height="24"
+                />
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://www.linkedin.com/in/anshika-gupta-10385421b/"
+                class="social-link"
+              >
+                <img
+                  src="assets/images/linkedin_logo-removebg-preview.png"
+                  width="24"
+                  height="24"
+                />
+              </a>
+            </li>
+
+            <li class="social-item">
+              <a
+                href="https://www.instagram.com/anshika_.gupta1/"
+                class="social-link"
+              >
+                <img
+                  src="assets/images/insta-logo.png"
+                  width="24"
+                  height="24"
+                />
+              </a>
+            </li>
+            <li class="social-item">
+              <a href="https://github.com/Anshika-Gupta05" class="social-link">
+                <img src="assets/images/github.png" width="24" height="24" />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!--
+      - #main-content
+    -->
+
+      <div class="main-content">
+        <!--
+        - #NAVBAR
+      -->
+
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <button class="navbar-link active" data-nav-link>About</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Resume</button>
+            </li>
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Portfolio</button>
+            </li>
+
+            <!-- <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li> -->
+
+            <li class="navbar-item">
+              <button class="navbar-link" data-nav-link>Contact</button>
+            </li>
+          </ul>
+        </nav>
+
+        <!--
+        - #ABOUT
+      -->
+
+        <article class="about active" data-page="about">
+          <header>
+            <h2 class="h2 article-title">About me</h2>
+          </header>
+
+          <section class="about-text">
+            <p>I'm Anshika Gupta, a passionate and driven individual with a strong foundation in computer science and a zeal for innovation. As a B.Tech student at Vellore Institute of Technology, I'm constantly seeking opportunities to expand my technical skills and knowledge. With a strong academic background, I've developed a solid understanding of computer networks, database management systems, data science, operating systems, and artificial intelligence. My proficiency in programming languages such as C/C++, Java, Python, R, MySQL, PHP, React.js, Node.js, and JavaScript has enabled me to tackle complex projects and deliver efficient solutions.
+            </p>
+            <p>As a web developer intern at Alphatech Software Pvt. Ltd., I've gained hands-on experience in developing interactive websites using HTML, CSS, and JavaScript, resulting in improved user engagement and reduced bounce rates. I'm also skilled in responsive design, ensuring optimal viewing across various devices.
+              My passion for learning has led me to pursue certifications in Python, Figma, Generative AI, and Gemini for Google Cloud. I've also developed natural language processing solutions with Azure AI Services and completed a certificate program in Artificial Intelligence using Google TensorFlow.</p>
+            <p>
+              Through my projects, I've demonstrated my ability to work on complex problems, such as panic disorder detection using machine learning and developing interactive recipe applications with custom uploads. I'm excited to continue exploring new technologies and collaborating with others to create innovative solutions. Outside of academics, I've held leadership positions in IEEE-IAS and VITMAS, where I've contributed to strategic planning, goal-setting, and professional development initiatives. I'm a strong believer in teamwork, analytical aptitude, and effective communication.
+            </p>
+            <p>I'm excited to share my projects and experiences with you through this portfolio. Let's connect and explore opportunities to create something amazing together!</p>
+            
+          </section>
+          
+        </article>
+
+        <!--
+        - #RESUME
+      -->
+
+        <article class="resume" data-page="resume">
+          <header>
+            <h2 class="h2 article-title">Resume</h2>
+          </header>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Education</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  Vellore Institute of Technology, Vellore
+                </h4>
+
+                <span>2021 — 2025</span>
+
+                <p class="timeline-text">
+                  Currently undertaking a Bachelor of Technology in Computer
+                  Science and Engineering, maintaining an impressive cumulative
+                  grade point average of 8.73.
+                </p>
+                <p class="timeline-text">
+                  This academic achievement reflects a consistent dedication to
+                  excellence and a deep understanding of the core principles and
+                  advanced concepts within the field.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  St. Mary's Convent Senior Secondary School
+                </h4>
+
+                <span>2019 — 2020</span>
+
+                <p class="timeline-text">
+                  Completed high school with a focus on Science, achieving a
+                  distinguished score of 93.4% in the Class 12 examinations.
+                  This academic accomplishment underscores my strong foundation
+                  in scientific principles and my commitment to academic
+                  excellence.
+                </p>
+              </li>
+
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">
+                  St. Mary's Convent Senior Secondary School
+                </h4>
+
+                <span>2017 — 2018</span>
+
+                <p class="timeline-text">
+                  I completed my secondary education with distinction, achieving
+                  an impressive score of 93.8% in the Class 10 examinations.
+                </p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="timeline">
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+
+              <h3 class="h3">Experience</h3>
+            </div>
+
+            <ol class="timeline-list">
+              <li class="timeline-item">
+                <h4 class="h4 timeline-item-title">Web Developer Intern</h4>
+
+                <span
+                  >Alphatech Software Pvt. Ltd. — 2 Month Internship — Aug-Sept 2023
+                </span>
+
+                <p class="timeline-text">
+                  1. Developed interactive websites using HTML,CSS and
+                  JavaScript resulting in an increase in user engagement and a
+                  decrease in bounce rate.
+                </p>
+                <p class="timeline-text">
+                  2.Implemented responsive design techniques on all projects to
+                  ensure optimal viewing across various devices, leading to an
+                  increase in mobile traffic.
+                </p>
+                <p class="timeline-text">
+                  3. Executed necessary updates and modifications on the
+                  company's official website to align with evolving market
+                  dynamics, ensuring it remains competitive and effectively
+                  meets the needs of its audience.
+                </p>
+                <p class="timeline-text">
+                  4. <b>Technologies learned: </b>JavaScript, HTML, CSS
+                </p>
+              </li>
+            
+
+          <section class="skill">
+            <h3 class="h3 skills-title">My skills</h3>
+
+            <ul class="skills-list content-card">
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Web development</h5>
+                  <data value="80">80%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Python(Flask)</h5>
+                  <data value="90">90%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 90%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Web design</h5>
+                  <data value="70">70%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Java</h5>
+                  <data value="90">90%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 90%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">C/C++</h5>
+                  <data value="90">90%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 90%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Generative AI & Gemini</h5>
+                  <data value="60">60%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 60%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">SQL</h5>
+                  <data value="70">70%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">Figma</h5>
+                  <data value="70">70%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">PHP</h5>
+                  <data value="50">50%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 50%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">JavaScript</h5>
+                  <data value="80">80%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+              <li class="skills-item">
+                <div class="title-wrapper">
+                  <h5 class="h5">React.js</h5>
+                  <data value="80">80%</data>
+                </div>
+                
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%"></div>
+                </div>
+              </li>
+              
+            </ul>
+          </section>
+        </article>
+
+        <!--
+        - #PORTFOLIO
+      -->
+
+        <article class="portfolio" data-page="portfolio">
+          <header>
+            <h2 class="h2 article-title">Portfolio</h2>
+          </header>
+
+          <section class="projects">
+            
+
+            <ul class="project-list">
+              <li
+                class="project-item active"
+                
+              >
+                <a href="https://panic-trqs.onrender.com">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-img1.webp"
+                      alt="finance"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Panic Disorder Detection</h3>
+
+                  <p class="project-category">Machine Learning</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                
+              >
+                <a href="https://foodies-anshika.netlify.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-img2.webp"
+                      alt="foodies"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Foodies</h3>
+
+                  <p class="project-category">A web application for foodies to discover new recipes</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                
+              >
+                <a href="https://to-do-listanshika.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-img3.webp"
+                      alt="TODO"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">To-Do-List App</h3>
+
+                  <p class="project-category">React Based App</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                
+              >
+                <a href="https://nutrifood-anshika.netlify.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-img4.webp"
+                      alt="nutrifood"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Nutrition Tracking App</h3>
+
+                  <p class="project-category">React Based App</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                
+              >
+                <a href="https://bankist-ashy-six.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-img5.webp"
+                      alt="bankist"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Bankist</h3>
+
+                  <p class="project-category">Web Development</p>
+                </a>
+              </li>
+              <li
+                class="project-item active"
+                
+              >
+                <a href="https://mapty-eight-murex.vercel.app/">
+                  <figure class="project-img">
+                    <div class="project-item-icon-box">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </div>
+
+                    <img
+                      src="./assets/images/project-img6.webp"
+                      alt="mapty"
+                      loading="lazy"
+                    />
+                  </figure>
+
+                  <h3 class="project-title">Workout Tracking App</h3>
+
+                  <p class="project-category">React Based App</p>
+                </a>
+              </li>
+
+              
+            </ul>
+          </section>
+        </article>
+
+       
+        <!--
+        - #CONTACT
+      -->
+
+        <article class="contact" data-page="contact">
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+
+          <section class="contact-form">
+            <h3 class="h3 form-title">Contact Form</h3>
+
+            <form id="contactForm" class="form" data-form>
+              <div class="input-wrapper">
+                <input
+                  type="text"
+                  name="firstName"
+                  class="form-input"
+                  placeholder="First name"
+                  required
+                  data-form-input
+                />
+                <input
+                  type="text"
+                  name="lastName"
+                  class="form-input"
+                  placeholder="Last name"
+                  required
+                  data-form-input
+                />
+
+                <input
+                  type="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="Email address"
+                  required
+                  data-form-input
+                />
+                <input
+                  type="tel"
+                  name="phone"
+                  class="form-input"
+                  placeholder="Phone No."
+                  required
+                  data-form-input
+                  />
+
+                
+              </div>
+
+              <textarea
+                name="message"
+                class="form-input"
+                placeholder="Your Message"
+                required
+                data-form-input
+              ></textarea>
+
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+            </form>
+          </section>
+
+          <div class="popup-overlay" id="popupOverlay"></div>
+          <div class="popup" id="popupMessage">
+            Thank you for reaching out to me. Your message has been received,
+            and I will respond to you at my earliest convenience.
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <!--
+    - custom js link
+  -->
+    <script src="./assets/js/script.js"></script>
+
+    <!--
+    - ionicon link
+  -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <!--
+    - pop-up
+-->
+
+    <script>
+      document
+        .getElementById("contactForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const form = event.target;
+          const formData = new FormData(form);
+
+          console.log("Form submission intercepted");
+
+          fetch(
+            "https://script.google.com/macros/s/AKfycbwd5J87E0miumu5-cgBhJ7xgnmDmr16_xzkrnGnjBl3Zw9TZWOsxY4zSdHz4Zo_1y4k6Q/exec",
+            {
+              method: "POST",
+              body: formData,
+            }
+          )
+            .then((response) => response.text())
+            .then((result) => {
+              console.log("Server response:", result);
+              if (result.trim() === "Success") {
+                document.getElementById("popupOverlay").style.display = "block";
+                document.getElementById("popupMessage").style.display = "block";
+              }
+            })
+            .catch((error) => console.error("Error!", error.message));
+        });
+
+      document
+        .getElementById("popupOverlay")
+        .addEventListener("click", function () {
+          document.getElementById("popupOverlay").style.display = "none";
+          document.getElementById("popupMessage").style.display = "none";
+        });
+    </script>
+  </body>
+</html>
