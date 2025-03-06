@@ -467,17 +467,20 @@ main {
   #NAVBAR
 \*-----------------------------------*/
 
+body {
+  padding-top: 60px; /* Add this line, adjust the value according to your navbar height */
+}
 .navbar {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   width: 100%;
-  background: hsla(240, 1%, 17%, 0.75);
-  backdrop-filter: blur(10px);
+  background-color: hsla(240, 1%, 17%, 0.75); /* Changed to background-color */
   border: 1px solid var(--jet);
   border-radius: 12px 12px 0 0;
   box-shadow: var(--shadow-2);
   z-index: 5;
+  height: 60 px;
 }
 
 .navbar-list {
