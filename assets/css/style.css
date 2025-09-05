@@ -110,7 +110,6 @@
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 a {
@@ -1598,31 +1597,6 @@ textarea.form-input::-webkit-resizer {
   }
 }
 
-/* POP-UP */
-
-/* .popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  background-color: white;
-  border: 2px solid #000;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-}
-.popup-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 999;
-} */
-
 .popup {
   display: none;
   position: fixed;
@@ -1638,7 +1612,6 @@ textarea.form-input::-webkit-resizer {
   border-radius: 10px; /* Rounded corners */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
-  font-family: "Poppins", sans-serif; /* Font style */
   color: white; /* Font color to make it readable on a dark background */
   text-align: center; /* Center the text */
   font-size: large;
@@ -1661,4 +1634,191 @@ textarea.form-input::-webkit-resizer {
     padding: 20px; /* Adjust padding for smaller screens */
     font-size: medium; /* Smaller font size for better readability on small screens */
   }
+}
+/* ------------------------------ */
+/* GLOBAL IMPROVEMENTS */
+/* ------------------------------ */
+
+body {
+  background: linear-gradient(
+    135deg,
+    #0f2027,
+    #203a43,
+    #2c5364
+  ); /* modern gradient */
+  color: var(--white-2);
+}
+
+/* NAVBAR with glass effect */
+.navbar {
+  backdrop-filter: blur(12px);
+  background: rgba(20, 20, 20, 0.65);
+  border: none;
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+}
+
+.navbar-link {
+  position: relative;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.navbar-link.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  width: 100%;
+  height: 3px;
+  background: var(--orange-yellow-crayola);
+  border-radius: 2px;
+  animation: slideIn 0.3s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* ABOUT SECTION */
+.about-text p {
+  font-size: 15px;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  text-align: left;
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* PROJECT CARDS */
+.project-item > a {
+  background: rgba(30, 30, 30, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: var(--shadow-2);
+  transition: all 0.3s ease;
+}
+
+.project-item > a:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-4);
+}
+
+.project-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.project-category {
+  margin: 0 15px 15px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  display: inline-block;
+  background: rgba(0, 173, 181, 0.15);
+  color: var(--orange-yellow-crayola);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Section headings (Major / Mini Projects) */
+.sub-title {
+  font-size: 20px;
+  margin: 25px 0 15px;
+  color: var(--orange-yellow-crayola);
+  border-left: 4px solid var(--orange-yellow-crayola);
+  padding-left: 12px;
+  font-weight: 600;
+}
+
+/* TIMELINE */
+.timeline-item::after {
+  width: 10px;
+  height: 10px;
+  background: var(--orange-yellow-crayola);
+}
+
+.timeline-item::before {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* CONTACT FORM */
+.contact-form {
+  background: rgba(30, 30, 30, 0.85);
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-3);
+}
+
+.input-wrapper {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile default: 1 column */
+  gap: 15px;
+}
+
+/* Place inputs side by side on larger screens */
+@media (min-width: 768px) {
+  .input-wrapper {
+    grid-template-columns: 1fr 1fr; /* two columns */
+  }
+  .input-wrapper input:nth-child(1),
+  .input-wrapper input:nth-child(2) {
+    grid-column: span 1; /* first row: first name + last name */
+  }
+  .input-wrapper input:nth-child(3),
+  .input-wrapper input:nth-child(4) {
+    grid-column: span 1; /* second row: email + phone */
+  }
+}
+
+/* Form inputs */
+.form-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 12px 15px;
+  transition: border 0.3s ease;
+  box-sizing: border-box;
+}
+
+.form-input:focus {
+  border-color: var(--orange-yellow-crayola);
+}
+
+/* Textarea should always span full width */
+textarea.form-input {
+  grid-column: 1 / -1;
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Button */
+.form-btn {
+  background: linear-gradient(90deg, #00adb5, #00ffb0);
+  color: #000;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin-top: 15px;
+  padding: 12px 18px;
+}
+
+.form-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 180, 0.4);
 }
