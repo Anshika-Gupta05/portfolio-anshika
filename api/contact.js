@@ -1,32 +1,37 @@
-import fetch from "node-fetch";
+import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  // CORS headers
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.status(200).end();
 
-  try {
-    const formData = req.body;
+  if (req.method === "POST") {
+    try {
+      const { firstName, lastName, email, phone, message } = req.body;
 
-    const params = new URLSearchParams();
-    for (const key in formData) {
-      params.append(key, formData[key]);
+      const transporter = nodemailer.createTransport({
+        service: "gmail",
+        auth: {
+          user: process.env.EMAIL_USER,
+          pass: process.env.EMAIL_PASS,
+        },
+      });
+
+      await transporter.sendMail({
+        from: email,
+        to: process.env.EMAIL_USER,
+        subject: `New Contact Form from ${firstName} ${lastName}`,
+        text: `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
+      });
+
+      res.status(200).json({ result: "success" });
+    } catch (err) {
+      console.error(err);
+      res.status(500).json({ result: "error", message: err.message });
     }
-
-    const response = await fetch(
-      "https://script.google.com/macros/s/AKfycbwFc-tIg5vFJ80fP9s8FQKTL5ApWE2DDcH_ZedSa9q1Fjj2ukaS48Xb0IA9E0gd1Pg6pQ/exec",
-      {
-        method: "POST",
-        body: params,
-      }
-    );
-
-    const result = await response.json();
-
-    // return success to frontend
-    res.status(200).json(result);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Failed to send message" });
+  } else {
+    res.status(405).json({ result: "error", message: "Method not allowed" });
   }
 }
