@@ -32,7 +32,7 @@ formInputs.forEach((input) => {
 
 // Replace this with your Apps Script Web App URL
 const GOOGLE_SCRIPT_URL =
-  "https://script.google.com/macros/s/AKfycbzhXV3NOOzbQyAy1we4398RsAzn_X5RD58nQUFE1QZQtXudaXfl23IDfVqLfYhPlG1RpA/exec";
+  "https://script.google.com/macros/s/AKfycbwOAVJ2mIhKCOnUcYkHGUHS9C0Z8HwFP96oKc2iXHFC0gCHKKnsnPmS2_Ju92H7e6MY/exec";
 
 // Submit handler
 form.addEventListener("submit", async (event) => {
