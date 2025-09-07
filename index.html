@@ -655,8 +655,10 @@
         - #CONTACT
       -->
 
+        <!-- CONTACT -->
         <article class="contact" data-page="contact">
           <header><h2 class="h2 article-title">Contact</h2></header>
+
           <section class="contact-form">
             <h3 class="h3 form-title">Contact Form</h3>
             <form id="contactForm" class="form" data-form>
@@ -708,6 +710,7 @@
             </form>
           </section>
 
+          <!-- Popup -->
           <div class="popup-overlay" id="popupOverlay"></div>
           <div class="popup" id="popupMessage">
             Thank you for reaching out! I will respond shortly.
@@ -724,24 +727,28 @@
     <!--
     - ionicon link
   -->
-    <script
+    <!-- <script
       type="module"
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
     ></script>
     <script
       nomodule
       src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    ></script> -->
 
     <!--
     - pop-up
 -->
-
+    <!-- 
     <script>
       const form = document.getElementById("contactForm");
       const formInputs = document.querySelectorAll("[data-form-input]");
       const formBtn = form.querySelector("[data-form-btn]");
 
+      const popupOverlay = document.getElementById("popupOverlay");
+      const popupMessage = document.getElementById("popupMessage");
+
+      // Enable/disable button based on form validity
       formInputs.forEach((input) => {
         input.addEventListener("input", () => {
           form.checkValidity()
@@ -750,33 +757,33 @@
         });
       });
 
+      // Replace this with your Apps Script Web App URL
+      const GOOGLE_SCRIPT_URL =
+        "https://script.google.com/macros/s/AKfycbxmgOt0lzG1pJ7oLBEci1Q-I34KysJb2Yk4PHLXFEEONJ5NpPPUBhZRCaUALLeanLfS7w/exec";
+
+      // Submit handler
       form.addEventListener("submit", async (event) => {
         event.preventDefault();
-        const formData = {};
-        formInputs.forEach((input) => (formData[input.name] = input.value));
+
+        const formData = new FormData(form);
 
         formBtn.disabled = true;
         formBtn.innerHTML = `<ion-icon name="send-outline"></ion-icon><span>Sending...</span>`;
 
         try {
-          const res = await fetch("/api/contact", {
+          await fetch(GOOGLE_SCRIPT_URL, {
             method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(formData),
+            body: formData,
+            mode: "no-cors", // bypass CORS restriction
           });
-          const result = await res.json();
 
-          if (result.result === "success") {
-            document.getElementById("popupOverlay").style.display = "block";
-            document.getElementById("popupMessage").style.display = "block";
-            form.reset();
-            formBtn.disabled = true;
-            formBtn.innerHTML = `<ion-icon name="paper-plane"></ion-icon><span>Send Message</span>`;
-          } else {
-            alert("Error: " + result.message);
-            formBtn.disabled = false;
-            formBtn.innerHTML = `<ion-icon name="paper-plane"></ion-icon><span>Send Message</span>`;
-          }
+          // Show success popup (can't check JSON in no-cors mode)
+          popupOverlay.style.display = "block";
+          popupMessage.style.display = "block";
+
+          form.reset();
+          formBtn.disabled = true;
+          formBtn.innerHTML = `<ion-icon name="paper-plane"></ion-icon><span>Send Message</span>`;
         } catch (error) {
           console.error("Error!", error);
           alert("Something went wrong. Please try again.");
@@ -785,10 +792,11 @@
         }
       });
 
-      document.getElementById("popupOverlay").addEventListener("click", () => {
-        document.getElementById("popupOverlay").style.display = "none";
-        document.getElementById("popupMessage").style.display = "none";
+      // Close popup on overlay click
+      popupOverlay.addEventListener("click", () => {
+        popupOverlay.style.display = "none";
+        popupMessage.style.display = "none";
       });
-    </script>
+    </script> -->
   </body>
 </html>
